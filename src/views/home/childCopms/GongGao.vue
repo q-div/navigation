@@ -17,7 +17,7 @@ export default {
     .fu {
         position: absolute;
         top: 68px;
-        right: 220.37px;
+        right: 205.37px;
         border: 1px solid pink;
         border-radius: 5%;
         text-align: center;

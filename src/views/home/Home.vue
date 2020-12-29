@@ -1,6 +1,6 @@
 <template>
     <div id="home">
-        <nav-bar class="home-nav">
+        <nav-bar :class="{homeNav:isShow,yan:isShoww}">
             <div slot="right">
                 <!-- <router-link to="/about" active-class="active">关于</router-link>
                 <router-link to="/developer" active-class="active">开发</router-link>
@@ -33,6 +33,12 @@ export default {
     components: {
         NavBar
     },
+    data(){
+      return {
+        isShow: true,
+        isShoww: false
+      }
+    },
     methods: {
     //     kaifaClick(){
     //         // 通过代码的方式修改理由  vue-router
@@ -41,38 +47,39 @@ export default {
     //         this.$router.replace('/developer')
     //         console.log('kaifaClick');
     //     }
-      showClick(){
-          this.isShow = !isShow
-      }
     }
 }
 </script>
 
 <style scoped>
-  .home-nav {
+  .homeNav {
       background-color: var(--color-tint);
       color: #fff;  
   }
-
-  .home-nav a:last-child::after{
-      content: '>'
-
+  .yan {
+      background-color: var(--color-background);
+      color: #000;
+  }
+  
+  .homeNav a:last-child::after{
+    content:">";
   }
    
 
-  .home-nav ul{
+  .homeNav ul{
       position: relative;
       top: 0;
       left: 350px;
   }
 
-  .home-nav ul li {
+  .homeNav ul li {
       float: left;
   }
 
-  a{
+  .homeNav a{
     padding: 20px;
     color: #fff;
+    margin-left: 2px;
   }
 
   a:hover{
